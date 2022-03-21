@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { map } from 'rxjs';
-import { ProductServiceService } from './service/product-service.service';
+import { ProductService } from './service/product.service';
 
 @Component({
   selector: 'app-root',
@@ -9,27 +7,19 @@ import { ProductServiceService } from './service/product-service.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  productServiceService: any;
 
-  constructor(private roductServiceService: ProductServiceService) {
-
+  constructor(private productService: ProductService) {
+    this.productService.getProduct().subscribe( (data: any) => {
+      console.log(data);
+    })
   }
 
   
   ngOnInit(): void {
-
-    this.loadProduct()
+  
   }
 
-  loadProduct(){
-    this.productServiceService.getProduct().subscribe((data: any) => {
-      console.log(data);
-    })
-    // this.productServiceService.getProduct()
-    //   .then((res:any)=>{
-    //     console.log(res);
-        
-    //   })
+ 
     
-  }
+  
 }

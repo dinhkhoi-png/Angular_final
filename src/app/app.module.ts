@@ -24,7 +24,7 @@ import { ScreenTrackingService,UserTrackingService } from '@angular/fire/analyti
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthGuardModule,
     AngularFirestoreModule,
 

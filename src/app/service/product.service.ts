@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs';
-import { Action } from 'rxjs/internal/scheduler/Action';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductServiceService {
-  product: any | undefined
-
-  constructor(private alt: AngularFirestore) {
-    this.product = this.alt.collection('product')
+export class ProductService {
+  products:any
+  constructor(private afs:AngularFirestore) {
+    this.products = this.afs.collection('product')
       .snapshotChanges()
       .pipe(
         map(actions => actions.map(a => {
@@ -23,7 +20,7 @@ export class ProductServiceService {
   }
 
   getProduct() {
-    return this.product
+    return this.products
   }
-  
+
 }
