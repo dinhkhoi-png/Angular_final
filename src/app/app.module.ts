@@ -14,6 +14,7 @@ import { ScreenTrackingService,UserTrackingService } from '@angular/fire/analyti
 import { HeaderComponent } from './home/header/header.component';
 import { ContentComponent } from './home/content/content.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -24,7 +25,8 @@ import { FooterComponent } from './home/footer/footer.component';
     HomeComponent,
     HeaderComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent
   ],
 
   imports: [
