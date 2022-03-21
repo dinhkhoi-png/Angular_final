@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ProductService } from './service/product.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,10 @@ import { ProductService } from './service/product.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  constructor(private productService: ProductService) {
-    this.productService.getProduct().subscribe( (data: any) => {
-      console.log(data);
-    })
+  
+  constructor() {
   }
+
 
   
   ngOnInit(): void {
