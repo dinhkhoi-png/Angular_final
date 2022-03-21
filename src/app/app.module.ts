@@ -11,6 +11,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthGuardModule } from '@angular/fire/compat/auth-guard';
 import { ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { HeaderComponent } from './home/header/header.component';
+import { ContentComponent } from './home/content/content.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 
 
@@ -18,7 +21,10 @@ import { ScreenTrackingService,UserTrackingService } from '@angular/fire/analyti
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    ContentComponent,
+    FooterComponent
   ],
 
   imports: [
