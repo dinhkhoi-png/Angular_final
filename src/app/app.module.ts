@@ -15,6 +15,11 @@ import { HeaderComponent } from './home/header/header.component';
 import { ContentComponent } from './home/content/content.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
+import { MenuComponent } from './admin/menu/menu.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { ContentadminComponent } from './admin/contentadmin/contentadmin.component';
+import { FooteradminComponent } from './admin/footeradmin/footeradmin.component';
+import { FromComponent } from './admin/from/from.component';
 
 
 
@@ -26,7 +31,12 @@ import { AdminComponent } from './admin/admin.component';
     HeaderComponent,
     ContentComponent,
     FooterComponent,
-    AdminComponent
+    AdminComponent,
+    MenuComponent,
+    SidebarComponent,
+    ContentadminComponent,
+    FooteradminComponent,
+    FromComponent
   ],
 
   imports: [
