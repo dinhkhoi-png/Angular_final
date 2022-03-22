@@ -5,25 +5,25 @@ import { AdminComponent } from './admin/admin.component';
 import { FromComponent } from './admin/from/from.component';
 
 const routes: Routes = [
-//redirec ve home
+  //redirec ve home
   {
-    path:'',
-    pathMatch:'full',
-    redirectTo:'home'
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
   },
   {
-    path:'home',
+    path: 'home',
     component: HomeComponent
   },
   {
-    path:'admin',
-    component: AdminComponent
-  },
-  {
-    path:'from',
-    component: FromComponent
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      { path: ' ', redirectTo: 'detail' },
+      { path: 'home', component: FromComponent },
+    ]
   }
-  
+
 ];
 
 @NgModule({
