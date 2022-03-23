@@ -5,6 +5,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AddProductComponent } from './admin/add-product/add-product.component';
 import { ContentadminComponent } from './admin/contentadmin/contentadmin.component';
 import { LoginComponent } from './admin/login/login.component';
+import { EditItemComponent } from './admin/edit-item/edit-item.component';
+
 const routes: Routes = [
   //redirec ve home
   {
@@ -31,6 +33,10 @@ const routes: Routes = [
       {
         path:'login',
         component: LoginComponent
+      },
+      {
+        path:'edit',
+        component: EditItemComponent
       }
     ]
   },

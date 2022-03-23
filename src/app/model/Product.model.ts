@@ -3,4 +3,5 @@ export class Product{
     product_name:string='';
     price:number=0;
     desc:string='';
+    url:string='';
 }

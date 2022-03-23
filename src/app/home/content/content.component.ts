@@ -38,11 +38,6 @@ export class ContentComponent implements OnInit {
     this.productService.create(data)
   }
 
-  deleteProduct(id:any){
-    console.log(id);
-    this.productService.delete(id)
-  }
-
 
 
 }

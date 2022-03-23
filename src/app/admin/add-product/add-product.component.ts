@@ -5,6 +5,7 @@ import { finalize, map, Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { url } from 'inspector';
 import { ProductService } from "../../service/product.service";
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 
 
 @Component({
@@ -17,16 +18,24 @@ export class AddProductComponent implements OnInit {
   imageSrc: string | any
   // currentFileUpload?: FileUpload;
   percentage = 0;
-
   fileUploads?: any[];
   fb: any;
-
+  itemsRef: AngularFireList<any> | undefined;
+  items: Observable<any[]> | undefined;
+  name:any
+  price:any
+  desc:string=''
+  image:string=''
 
 
   constructor(
-    private storage:AngularFireStorage,
-    private productService:ProductService
-    ) { }
+    private storage: AngularFireStorage,
+    private productService: ProductService,
+    private db: AngularFireDatabase
+  ) { 
+
+    
+  }
 
   ngOnInit(): void {
     this.initForm()
@@ -62,28 +71,27 @@ export class AddProductComponent implements OnInit {
   onSubmit(productForm: NgForm) {
     if (productForm.status == 'VALID') {
       var n = Date.now();
-    const file = this.currentFile;
-    const filePath = `RoomsImages/${n}`;
-    const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(`RoomsImages/${n}`, file);
-    task
-      .snapshotChanges()
-      .pipe(
-        finalize(() => {
-          fileRef.getDownloadURL()
-            .subscribe(url => {
-              if (url) {
-                this.fb = url
-                delete productForm.value.imageUrl
-                productForm.value.url= url
-                console.log(url);
-                
-                this.add(productForm.value)
-              }
-            })
+      const file = this.currentFile;
+      const filePath = `RoomsImages/${n}`;
+      const fileRef = this.storage.ref(filePath);
+      const task = this.storage.upload(`RoomsImages/${n}`, file);
+      task
+        .snapshotChanges()
+        .pipe(
+          finalize(() => {
+            fileRef.getDownloadURL()
+              .subscribe(url => {
+                if (url) {
+                  this.fb = url
+                  delete productForm.value.imageUrl
+                  productForm.value.url = url
+                  this.clearData()
+                  this.add(productForm.value)
+                }
+              })
 
-        })
-      ).subscribe()
+          })
+        ).subscribe()
 
       Swal.fire({
         'title': 'Thành công ',
@@ -97,11 +105,18 @@ export class AddProductComponent implements OnInit {
     }
 
   }
+  clearData() {
+    this.name=''
+    this.price=0
+    this.desc=''
+    this.image=''
+    this.imageSrc=''
+  }
 
-  id:number=0
-  add(data:any){
-  
+  id: number = 0
+  add(data: any) {
     this.productService.create(data)
   }
+
 
 }

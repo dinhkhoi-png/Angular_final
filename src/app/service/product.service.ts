@@ -35,4 +35,9 @@ export class ProductService {
     this.afs.collection('product').doc(id).delete()
   }
 
+
+  update(id:any,data:any){
+    this.afs.collection('product').doc(id).update(data)
+  }
+
 }
