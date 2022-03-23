@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
 import { AdminComponent } from './admin/admin.component';
 import { FromComponent } from './admin/from/from.component';
-
+import { LoginComponent } from './admin/login/login.component';
 const routes: Routes = [
   //redirec ve home
   {
@@ -16,12 +16,16 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'admin',
-    component: AdminComponent,
-    children: [
-      { path: ' ', redirectTo: 'detail' },
-      { path: 'home', component: FromComponent },
-    ]
+    path:'admin',
+    component: AdminComponent
+  },
+  {
+    path:'from',
+    component: FromComponent
+  },
+  {
+    path:'login',
+    component: LoginComponent
   }
 
 ];
