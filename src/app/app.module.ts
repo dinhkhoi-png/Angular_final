@@ -20,6 +20,8 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { ContentadminComponent } from './admin/contentadmin/contentadmin.component';
 import { FooteradminComponent } from './admin/footeradmin/footeradmin.component';
 import { FromComponent } from './admin/from/from.component';
+import { LoginComponent } from './admin/login/login.component';
+
 
 
 
@@ -36,7 +38,8 @@ import { FromComponent } from './admin/from/from.component';
     SidebarComponent,
     ContentadminComponent,
     FooteradminComponent,
-    FromComponent
+    FromComponent,
+    LoginComponent,
   ],
 
   imports: [
