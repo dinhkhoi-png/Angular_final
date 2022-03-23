@@ -19,8 +19,8 @@ import { MenuComponent } from './admin/menu/menu.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { ContentadminComponent } from './admin/contentadmin/contentadmin.component';
 import { FooteradminComponent } from './admin/footeradmin/footeradmin.component';
-import { FromComponent } from './admin/from/from.component';
 import { LoginComponent } from './admin/login/login.component';
+import { AddProductComponent } from './admin/add-product/add-product.component';
 
 
 
@@ -38,8 +38,8 @@ import { LoginComponent } from './admin/login/login.component';
     SidebarComponent,
     ContentadminComponent,
     FooteradminComponent,
-    FromComponent,
     LoginComponent,
+    AddProductComponent,
   ],
 
   imports: [
