@@ -24,6 +24,7 @@ import { AddProductComponent } from './admin/add-product/add-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { EditItemComponent } from './admin/edit-item/edit-item.component';
+import { RegisterComponent } from './admin/register/register.component';
 
 
 
@@ -43,6 +44,7 @@ import { EditItemComponent } from './admin/edit-item/edit-item.component';
     LoginComponent,
     AddProductComponent,
     EditItemComponent,
+    RegisterComponent,
   ],
 
   imports: [
