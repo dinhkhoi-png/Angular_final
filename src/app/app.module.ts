@@ -21,7 +21,8 @@ import { ContentadminComponent } from './admin/contentadmin/contentadmin.compone
 import { FooteradminComponent } from './admin/footeradmin/footeradmin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { AddProductComponent } from './admin/add-product/add-product.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -48,7 +49,9 @@ import { AddProductComponent } from './admin/add-product/add-product.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthGuardModule,
     AngularFirestoreModule,
-
+    FormsModule,
+    ReactiveFormsModule,
+    SweetAlert2Module
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

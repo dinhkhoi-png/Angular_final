@@ -18,7 +18,10 @@ export class ContentComponent implements OnInit {
 
   getListProduct() {
     this.productService.getAllProduct().subscribe((data: any) => {
-      this.Products = data.map((item: any) => item)
+      this.Products = data.map((item: any) => {
+        console.log(item);
+        return item
+      })
     })
   }
 
