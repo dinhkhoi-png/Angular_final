@@ -6,6 +6,7 @@ import { AddProductComponent } from './admin/add-product/add-product.component';
 import { ContentadminComponent } from './admin/contentadmin/contentadmin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { EditItemComponent } from './admin/edit-item/edit-item.component';
+import { RegisterComponent } from './admin/register/register.component';
 
 const routes: Routes = [
   //redirec ve home
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path:'edit',
         component: EditItemComponent
+      },
+      {
+        path:'register',
+        component: RegisterComponent
       }
     ]
   },
