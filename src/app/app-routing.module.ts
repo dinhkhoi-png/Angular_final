@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
 import { AdminComponent } from './admin/admin.component';
-// import { FromComponent } from './admin/from/from.component';
+import { AddProductComponent } from './admin/add-product/add-product.component';
+import { ContentadminComponent } from './admin/contentadmin/contentadmin.component';
 import { LoginComponent } from './admin/login/login.component';
 const routes: Routes = [
   //redirec ve home
@@ -17,17 +18,23 @@ const routes: Routes = [
   },
   {
     path:'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    children:[
+      {
+        path:'',
+        component: ContentadminComponent
+      },
+      {
+        path:'add',
+        component: AddProductComponent
+      },
+      {
+        path:'login',
+        component: LoginComponent
+      }
+    ]
   },
-  // {
-  //   path:'from',
-  //   component: FromComponent
-  // },
-  {
-    path:'login',
-    component: LoginComponent
-  }
-
+ 
 ];
 
 @NgModule({

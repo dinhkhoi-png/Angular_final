@@ -1,19 +1,26 @@
 <!--Container -->
 <div class="mx-auto bg-grey-400">
     <!--Screen-->
-    <div class="min-h-screen flex flex-col">
+    <div class="container">
         <!--Header Section Starts Here-->
-         <app-menu></app-menu>
+         <div class="row">
+            <app-menu></app-menu>
+         </div>
         <!--/Header-->
 
-        <div class="flex:150">
-
+        <div class="row">
+            <div class="col-lg-2">
+                <!--/Sidebar-->
             <app-sidebar></app-sidebar>
-            <!--/Sidebar-->
 
+            </div>
+            <div class="col-lg-10">
+                
             <!--Main-->
             <router-outlet></router-outlet>
             <!--/Main-->
+            </div>
+            
         </div>
         <!--Footer-->
             <app-footer></app-footer>
