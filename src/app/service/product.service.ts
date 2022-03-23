@@ -6,9 +6,15 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  products:any
-  constructor(private afs:AngularFirestore) {
-    this.products = this.afs.collection('product')
+  products: any
+
+  constructor(private afs: AngularFirestore) {
+  }
+
+
+
+  getAllProduct() {
+    return this.afs.collection('product')
       .snapshotChanges()
       .pipe(
         map(actions => actions.map(a => {
@@ -19,8 +25,19 @@ export class ProductService {
       );
   }
 
-  getProduct() {
-    return this.products
+  create(data: any) {
+    this.afs.collection('product').add(data)
+  }
+
+
+
+  delete(id: any) {
+    this.afs.collection('product').doc(id).delete()
+  }
+
+
+  update(id:any,data:any){
+    this.afs.collection('product').doc(id).update(data)
   }
 
 }

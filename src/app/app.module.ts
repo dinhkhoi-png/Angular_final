@@ -14,6 +14,17 @@ import { ScreenTrackingService,UserTrackingService } from '@angular/fire/analyti
 import { HeaderComponent } from './home/header/header.component';
 import { ContentComponent } from './home/content/content.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { AdminComponent } from './admin/admin.component';
+import { MenuComponent } from './admin/menu/menu.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { ContentadminComponent } from './admin/contentadmin/contentadmin.component';
+import { FooteradminComponent } from './admin/footeradmin/footeradmin.component';
+import { LoginComponent } from './admin/login/login.component';
+import { AddProductComponent } from './admin/add-product/add-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { EditItemComponent } from './admin/edit-item/edit-item.component';
+import { RegisterComponent } from './admin/register/register.component';
 
 
 
@@ -24,7 +35,16 @@ import { FooterComponent } from './home/footer/footer.component';
     HomeComponent,
     HeaderComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent,
+    MenuComponent,
+    SidebarComponent,
+    ContentadminComponent,
+    FooteradminComponent,
+    LoginComponent,
+    AddProductComponent,
+    EditItemComponent,
+    RegisterComponent,
   ],
 
   imports: [
@@ -33,7 +53,9 @@ import { FooterComponent } from './home/footer/footer.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthGuardModule,
     AngularFirestoreModule,
-
+    FormsModule,
+    ReactiveFormsModule,
+    SweetAlert2Module
   ],
   providers: [
     ScreenTrackingService,UserTrackingService
