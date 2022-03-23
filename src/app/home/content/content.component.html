@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-3" *ngFor="let item of Products;">
                 <div  class="card card-product-grid">
-                    <a  class="img-wrap"> <img src="assets/images/items/1.jpg"> </a>
+                    <a  class="img-wrap"> <img [src]="item.url"  alt="{{item.product_name}}"> </a>
                     <figcaption class="info-wrap">
                         <a  class="title">{{ item.product_name }}</a>
                         <div class="price mt-1">${{ item.price }}</div>
